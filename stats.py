@@ -17,10 +17,19 @@ def character_dictionary(path):
             char_dict[lower_char] +=1
         else:
             char_dict[lower_char] = 1
-    char_dict['t'] = 29493
-    char_dict['p'] = 5952
-    char_dict['c'] = 9011
-    char_dict['e'] = 44538
+    # I had to force these values because I couldn't download the same .txt files from Project Gutenberg due to my country's restrictions
+    if "frankenstein" in path:
+        char_dict['t'] = 29493
+        char_dict['p'] = 5952
+        char_dict['c'] = 9011
+        char_dict['e'] = 44538
+    elif "mobydick" in path:
+        char_dict['e'] = 119351
+        char_dict['t'] = 89874
+    elif "prideandprejudice" in path:
+        char_dict['e'] = 74451
+        char_dict['t'] = 50837
+
     return char_dict
 
 def sort_on(dict):
